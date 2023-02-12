@@ -13,7 +13,7 @@
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="Microsoft.PowerShell.Commands.Utility" Version="6.1.0-rc.1" />
     
-    <PackageReference Include="System.Management.Automation" Version="6.2.3" />
+    <PackageReference Include="System.Management.Automation" Version="7.3.2" />
     
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0">
