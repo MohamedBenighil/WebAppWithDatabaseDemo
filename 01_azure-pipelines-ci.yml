@@ -14,16 +14,7 @@ steps:
     packageType: sdk
     version: "6.x"
     installationPath: $(Agent.ToolsDirectory)/dotnet
-- task: NuGetAuthenticate@1
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'pack'
-    packagesToPack: '**/WebApp.csproj'
-    includesymbols: true
-    includesource: true
-    versioningScheme: 'off'
-    verbosityPack: 'Normal'
-  displayName: 'Dotnet Pack'
+
 - task: DotNetCoreCLI@2
   displayName: Restore Nuget Packages
   inputs:
