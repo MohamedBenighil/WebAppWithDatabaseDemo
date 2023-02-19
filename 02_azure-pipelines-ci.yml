@@ -53,13 +53,18 @@ jobs:
   #    SonarCloud: SonarCloud
   #    organization: basi-ci-pipeline
   #    projectKey: WebAppWithDatabaseDemo
+  #- task: SonarCloudPrepare@1
+  #  displayName: 'Prepare analysis on SonarCloud'
+  #  inputs:
+  #    SonarCloud: 'SonarCLoud'
+  #    organization: 'basi-ci-pipeline'
+  #    projectKey: 'feff234b0ab6b1eeea89ead1941476ad33028549'
   - task: SonarCloudPrepare@1
-    displayName: 'Prepare analysis on SonarCloud'
     inputs:
-      SonarCloud: 'SonarCLoud'
-      organization: 'basi-ci-pipeline'
-      projectKey: 'feff234b0ab6b1eeea89ead1941476ad33028549'
-  
+      SonarCloud: 'sonar2'
+      organization: 'benighil-org'
+      scannerMode: 'MSBuild'
+      projectKey: 'benighil-org_webappwithdatabasedemo'
   - task: DotNetCoreCLI@2
     displayName: Build
     inputs:
