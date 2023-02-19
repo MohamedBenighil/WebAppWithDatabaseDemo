@@ -11,6 +11,7 @@ jobs:
     vmImage: 'windows-2019'
   variables:
     BuildConfiguration: release
+
   
   steps:
   
@@ -95,6 +96,8 @@ jobs:
   displayName: 'Build Database'
   pool:
     vmImage: 'windows-2019'
+  dependsOn:
+  - WebApp
 
   steps:
   - task: MSBuild@1
@@ -112,7 +115,8 @@ jobs:
   displayName: 'Build UI Tests'
   pool:
     vmImage: 'windows-2019'
-
+  dependsOn:
+  - Database
   steps:
   - task: NuGetToolInstaller@0
     displayName: 'Use NuGet 4.3.0'
@@ -137,6 +141,8 @@ jobs:
   displayName: 'Copy Infrastructure files (ARM)'
   pool:
     vmImage: 'ubuntu-latest'
+  dependsOn:
+  - Selenium
   steps:
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: ARM templates'
