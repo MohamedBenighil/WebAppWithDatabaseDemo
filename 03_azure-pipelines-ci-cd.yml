@@ -277,7 +277,7 @@ stages:
       enabled: ${{ parameters.runCompletePipeline }}
       continueOnError: true
       inputs:
-        ConnectedServiceNameARM: 'WebAppWithDatabaseDemo_spn'
+        ConnectedServiceNameARM: 'VS mohamed.benighil(d462ce4f-6a2d-49e7-a103-74011445fdf5)'
         GenerateMethodParameterSetSelection: 'ResourceGroupName'
         ResourceGroupName: '$(ResourceGroupName)'
         SubscriptionId: '4b72ed90-7ca3-4e76-8d0f-31a2c0bee7a3'
