@@ -19,14 +19,14 @@ trigger:
      - 02_azure-pipelines-ci.yml
      - 03_azure-pipelines-ci-cd.yml
 
-parameters:
+parameters: # for enable/desable tasks
 - name: runCompletePipeline
   displayName: Run All Tasks ?
   type: boolean
   default: true
 
 stages:
-- stage: Build_Stage
+- stage: Build_Stage # generate arifacts
   displayName: Build Apps
   jobs:
 
@@ -176,7 +176,7 @@ stages:
         PathtoPublish: AzureResourceGroupDeployment
         ArtifactName: arm
 
-- stage: Dev_Stage
+- stage: Dev_Stage # create infra
   displayName: Create & Deploy to Dev
   dependsOn: Build_Stage
   variables:
