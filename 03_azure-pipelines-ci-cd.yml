@@ -79,9 +79,10 @@ stages:
       displayName: Prepare analysis on SonarCloud
       enabled: ${{ parameters.runCompletePipeline }}
       inputs:
-        SonarCloud: SonarCloud
-        organization: benighil-org
-        projectKey: benighil-org_webappwithdatabasedem
+        SonarCloud: 'sonar2'
+        organization: 'benighil'
+        scannerMode: 'MSBuild'
+        projectKey: 'benighil-org_webappwithdatabasedem'
 
     - task: DotNetCoreCLI@2
       displayName: Build WebApp
