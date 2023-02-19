@@ -176,7 +176,7 @@ stages:
         PathtoPublish: AzureResourceGroupDeployment
         ArtifactName: arm
 
-- stage: Dev_Stage # create infra
+- stage: Dev_Stage # create infra, 
   displayName: Create & Deploy to Dev
   dependsOn: Build_Stage
   variables:
@@ -194,7 +194,7 @@ stages:
     hostingPlanName: '$(Prefix)-service-plan'
 
   jobs:
-  - job: Create_DEV
+  - job: Create_DEV # Create infra for dev, deploy, run UI tests 
     displayName: Create DEV
     pool:
       vmImage: 'windows-2019'
@@ -365,7 +365,7 @@ stages:
         runInParallel: false
         codeCoverageEnabled: true
 
-
+#################
 - stage: Test_Stage
   displayName: Test Stage
   jobs:
