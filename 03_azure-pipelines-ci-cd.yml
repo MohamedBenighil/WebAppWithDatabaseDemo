@@ -229,8 +229,6 @@ stages:
         ARMTemplateFilePath: '$(System.DefaultWorkingDirectory)/arm/WebSiteSQLDatabase.json'
         ARMTemplateParameterFilePath: '$(System.DefaultWorkingDirectory)/arm/WebSiteSQLDatabase.parameters.json'
 
-# scan ARM template using TTK
-
     - task: RunARMTTKTests@1
       displayName: Scan ARM templates using TTK
       inputs:
@@ -293,7 +291,7 @@ stages:
     steps:
 
     - checkout: none
-# new JOB: Deploy App & Database
+
     - task: DownloadBuildArtifacts@0    
       displayName: Download WebApp.zip
       inputs:
@@ -335,7 +333,7 @@ stages:
         DeploymentAction: 'Publish'
         DacpacFile: '$(System.DefaultWorkingDirectory)/dacpac/WebApp.Database.dacpac'
         IpDetectionMethod: 'AutoDetect'
-# new JOB: Selenium
+
   - job: Test_DEV
     displayName: Run Selenium tests in DEV
     dependsOn: Deploy_DEV
