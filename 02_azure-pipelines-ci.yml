@@ -50,7 +50,7 @@ jobs:
     displayName: 'Prepare analysis on SonarCloud'
     inputs:
       SonarCloud: SonarCloud
-      organization: benighil
+      organization: basi-ci-pipeline
       projectKey: WebAppWithDatabaseDemo
 
   
